@@ -1,5 +1,10 @@
 terraform {
-  backend "local" {
-    path = "./env/non-prod/state/terraform.tfstate"
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "ftsl"
+
+    workspaces {
+      name = "ftsl-nonprod"
+    }
   }
 }
