@@ -1,8 +1,8 @@
 logs
 target
-classpath
-project
-settings
+/.classpath
+/.project
+/.settings
 /RUNNING_PID
 
 # Created by https://www.gitignore.io/api/java,scala,macos,intellij,terraform
