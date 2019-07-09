@@ -5,10 +5,16 @@ version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.13.0"
+scalaVersion := "2.12.8"
 
-libraryDependencies += guice
-libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.3" % Test
+resolvers += Resolver.sonatypeRepo("releases")
+
+libraryDependencies ++= Seq(
+  guice,
+  "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.3" % Test,
+  "com.beachape" %% "enumeratum" % "1.5.13",
+  "org.scanamo" %% "scanamo" % "1.0.0-M10"
+)
 
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "com.ftsl.controllers._"
