@@ -5,6 +5,8 @@ version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
+lazy val playground = (project in file ("playground")).dependsOn(root)
+
 scalaVersion := "2.12.8"
 
 resolvers += Resolver.sonatypeRepo("releases")

@@ -4,8 +4,10 @@ import java.util.UUID
 
 import enumeratum._
 import models.PublicHouse.Feature
+import org.scanamo.DynamoFormat
+import org.scanamo.semiauto._
 
-case class PublicHouse(id: UUID, name: String, address: PublicHouse.Address, features: List[Feature])
+case class PublicHouse(ItemId: UUID, name: String, address: PublicHouse.Address, features: List[Feature])
 
 object PublicHouse {
 
@@ -25,5 +27,7 @@ object PublicHouse {
 
     val values = findValues
   }
+
+  implicit val dynamoFormat : DynamoFormat[PublicHouse] = deriveDynamoFormat[PublicHouse]
 
 }
